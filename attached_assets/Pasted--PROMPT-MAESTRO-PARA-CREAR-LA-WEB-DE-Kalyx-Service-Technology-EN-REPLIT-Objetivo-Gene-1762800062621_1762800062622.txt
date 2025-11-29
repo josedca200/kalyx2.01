@@ -1,0 +1,243 @@
+# PROMPT MAESTRO PARA CREAR LA WEB DE **Kalyx Service Technology** EN REPLIT
+
+> **Objetivo**: Generar una web profesional, moderna y de alto rendimiento para la empresa *Kalyx Service Technology* (desarrollo de software y consultoría), lista para publicar en Replit. Debe incluir diseño, copy en español (con opción de inglés), navegación, SEO técnico, formularios funcionales, blog, CMS simple basado en archivos, y componentes reutilizables. Entrega en un solo repositorio con instrucciones de despliegue.
+
+---
+
+## Rol / Modo de trabajo del generador
+
+Actúa como **Product Designer Senior + Tech Lead Full‑Stack**. Toma decisiones de diseño coherentes, documenta tus elecciones y entrega una solución **pixel-perfect** y **production‑ready**.
+
+---
+
+## Stack y requisitos técnicos
+
+* **Framework**: React + Vite (o Next.js si lo consideras superior). Si usas Next.js, habilita SSG/ISR.
+* **UI**: Tailwind CSS + shadcn/ui + lucide-react.
+* **Accesibilidad**: WCAG 2.2 AA (focus states visibles, semántica correcta, contrastes ≥ 4.5:1, skip links).
+* **Rendimiento**: Lighthouse ≥ 95 (Performance/SEO/Best Practices/Accessibility). Imágenes optimizadas (next/image o vite-imagetools), carga diferida, prefetch.
+* **i18n**: ES y EN (estructura de traducciones por JSON).
+* **Contenido**: Markdown para blog y páginas largas (MDX opcional). CMS ligero por archivos (`/content`).
+* **Formularios**: Envío vía API interna (Node/Express) o servicios tipo Formspree; incluye validación Zod + react-hook-form, honeypot y rate limit básico.
+* **Analytics**: Consent mode + integración (p.ej. Plausible o Google Analytics) activable por env var.
+* **Seguridad**: Headers estrictos (CSP no-blocking para fuentes/analytics, HSTS, no sniff, XSS protection), sanitizado de entradas, CSRF en endpoints.
+* **DevOps**: Scripts npm (`dev`, `build`, `preview`, `start`). Archivo README con pasos de despliegue en Replit.
+* **Testing**: Playwright o Vitest + Testing Library para componentes críticos (Navbar, CTA, Form contacto).
+
+---
+
+## Marca y dirección de arte
+
+**Nombre**: Kalyx Service Technology
+**Eslogan**: *Diseñamos, construimos y escalamos productos de software que generan valor real.*
+
+**Personalidad**: confiable, técnica, resolutiva, cercana.
+**Paleta** (Tailwind):
+
+* Primario: `#1E90FF` (sky-600) / hover `#1C7FE6`
+* Oscuro: `#0B1220` (slate-950)
+* Neutros: `#0F172A` (slate-900), `#334155` (slate-600), `#E2E8F0` (slate-200), `#F8FAFC` (slate-50)
+* Acento: `#22D3EE` (cyan-400) y `#A78BFA` (violet-400)
+
+**Tipografías**: Headings — Inter/Tomorrow; Body — Inter/Roboto; Monospace — JetBrains Mono.
+**Iconografía**: lucide-react.
+**Ilustraciones**: gradientes sutiles, glassmorphism ligero, blobs con framer‑motion.
+**Micro‑interacciones**: framer‑motion (fade/slide, parallax leve en hero, hover-lift en cards).
+
+---
+
+## Arquitectura de la información (páginas y secciones)
+
+1. **Home**
+
+   * Hero con propuesta de valor, badges de confianza, CTA primario (*Agenda una llamada*) y secundario (*Ver casos*).
+   * “Por qué Kalyx”: 3‑5 pilares (Velocidad, Calidad, Transparencia, Seguridad, ROI medible).
+   * Servicios destacados (cards con icono, resumen y CTA a detalle).
+   * Casos de estudio (slider de 3 con KPI antes/después).
+   * Tech stack y certificaciones.
+   * Testimonios y logos de clientes/alianzas.
+   * CTA final + contacto corto.
+
+2. **Servicios** (landing general + subpáginas):
+
+   * **Descubrimiento & Product Strategy**: discovery sprints, mapa de stakeholders, roadmap, Product/Market Fit.
+   * **Diseño UX/UI & Design Systems**: research, wireframes, prototipos, DS con tokens y librería de componentes.
+   * **Desarrollo Web & APIs**: front (React/Next), back (Node/Nest), APIs REST/GraphQL, microservicios, WebSockets.
+   * **Móvil**: React Native/Expo; publicación en stores.
+   * **Data & AI**: ETL, data viz, RAG/LLM apps, agentes, MLOps ligero.
+   * **Cloud & DevOps**: CI/CD, contenedores, IaC (Terraform), observabilidad.
+   * **QA & Performance**: e2e, pruebas de carga, auditorías Lighthouse.
+   * **Mantenimiento & Soporte**: SLAs, monitoreo, rotación on‑call.
+
+   Cada subpágina: problema ⇒ enfoque ⇒ entregables ⇒ precios desde/bundles ⇒ FAQs ⇒ CTA demo.
+
+3. **Industrias** (verticales): fintech, retail/e‑commerce, salud, educación, logística. Beneficios y casos.
+
+4. **Casos de Estudio**: 3–5 casos con contexto, hipótesis, solución, arquitectura, métricas, lecciones.
+
+5. **Precios**: Paquetes (Discovery Sprint, MVP Sprint, Escalamiento, Soporte) + precios “desde”, comparativa y preguntas frecuentes. Nota legal.
+
+6. **Stack & Prácticas**: toolchain, estándares de código, seguridad, performance, accesibilidad.
+
+7. **Blog/Insights**: artículos MDX (guías técnicas, estrategia producto, estudios de performance). Buscador y categorías.
+
+8. **Nosotros**: misión, visión, valores, equipo (cards con social), cultura de trabajo.
+
+9. **Carreras**: roles, proceso de selección, formulario de aplicación.
+
+10. **Contacto**: formulario (nombre, email, empresa, tamaño, presupuesto, mensaje), link a Calendly opcional, datos legales.
+
+11. **Legal**: Privacidad, Términos, Cookies (banner con preferencias), DPA template.
+
+---
+
+## Componentes clave (reutilizables)
+
+* Navbar sticky con mega‑menu Servicios; Footer con 3 columnas + newsletter.
+* Hero, SectionHeader, FeatureCard, Testimonial, LogoWall, CaseCard.
+* PricingTable con toggles (mensual/anual, paquetes) y FAQ.
+* BlogCard, Tag, Pagination.
+* ContactForm con validación y estados (loading/success/error).
+* LanguageSwitcher (ES/EN) + ThemeToggle (light/dark, persistencia local).
+
+---
+
+## Contenido (copy) — ES (con traducción EN incluida en archivos de i18n)
+
+**Titular Home**: *Construimos software que mueve la aguja.*
+**Subtítulo**: *De la idea al impacto: estrategia, diseño, desarrollo y escalamiento con métricas claras.*
+**Pilares**: Velocidad responsable · Calidad auditable · Transparencia total · Seguridad por diseño · ROI mensurable.
+**CTA**: *Agenda una llamada de 30 min* / *Explora nuestros casos*.
+
+**Servicios — descripciones breves**:
+
+* *Descubrimiento & Estrategia*: Alineamos negocio, usuarios y tecnología en 10 días para destilar un plan ejecutable.
+* *UX/UI & Design Systems*: Diseños hermosos, accesibles y consistentes que escalan sin fricción.
+* *Web & APIs*: Apps rápidas, seguras y observables; APIs listas para producto.
+* *Móvil*: Experiencias nativas con un solo código y lanzamiento express.
+* *Data & AI*: De dashboards a asistentes con LLMs y RAG; decisiones con datos, no con corazonadas.
+* *Cloud & DevOps*: Despliegue continuo, monitoreo 360°, costos bajo control.
+* *QA & Performance*: Evitamos regresiones, medimos, optimizamos y documentamos.
+* *Soporte & SLA*: Tu equipo extendido, con tiempos de respuesta y resolución claros.
+
+**Testimonios** (placeholders realistas):
+
+* “Reducimos el time-to-market de 6 meses a 10 semanas.”
+* “Pasamos de 2.7s a 0.9s de LCP y subimos un 18% la conversión.”
+
+---
+
+## SEO técnico & metadatos
+
+* Títulos, descripciones y slugs coherentes; Open Graph/Twitter cards por página.
+* **Schema.org** (JSON‑LD): Organization, WebSite, BreadcrumbList, BlogPosting, Service, Product, FAQPage, JobPosting.
+* Sitemap XML + robots.txt. Canonicals. hreflang ES/EN.
+* Core Web Vitals: preconnect a fuentes, lazy loading, imágenes responsive.
+
+---
+
+## Accesibilidad y cumplimiento
+
+* Árbol semántico correcto (landmarks), navegación por teclado, aria‑labels donde aplique.
+* Contraste y tamaño de fuente mínimo. Capciones/alt text requeridos.
+
+---
+
+## Estructura del repositorio
+
+```
+/ (root)
+├─ src/
+│  ├─ components/ (UI reutilizable)
+│  ├─ pages/ o app/ (según framework)
+│  ├─ layouts/
+│  ├─ lib/ (utils, i18n, analytics, seo)
+│  ├─ styles/
+│  ├─ content/
+│  │  ├─ blog/
+│  │  ├─ services/
+│  │  └─ legal/
+│  └─ data/ (logos, testimonios, casos)
+├─ public/ (favicon, og-images, logos)
+├─ scripts/ (build, lint, test)
+├─ .env.example
+├─ README.md (setup, deploy Replit)
+└─ LICENSE
+```
+
+---
+
+## Formularios y flujos
+
+* **Contacto**: POST `/api/contact` → validación Zod → envía email (stub) + guarda en JSON local `/data/leads.json` (o servicio externo si `USE_FORMSERVICE=true`).
+* **Newsletter**: POST `/api/newsletter` con doble opt‑in si se habilita.
+* Mensajes de estado accesibles; reCAPTCHA opcional por env var.
+
+---
+
+## Casos de estudio — plantilla de contenido
+
+* Contexto del cliente (industria, tamaño, reto)
+* Objetivos y KPIs
+* Proceso (descubrimiento → diseño → construcción → lanzamiento)
+* Arquitectura y stack
+* Resultados medidos (antes/después)
+* Lecciones y próximos pasos
+
+---
+
+## Página de Precios — ejemplo (editable)
+
+* **Discovery Sprint** — desde $2.500 — 10 días, research, mapa de valor, backlog priorizado.
+* **MVP Sprint** — desde $8.000 — 4‑6 semanas, release inicial + métricas.
+* **Escalamiento** — desde $4.000/mes — equipo extendido, roadmap trimestral, SLOs.
+* **Soporte** — desde $1.200/mes — mantenimiento, monitoreo, parches de seguridad.
+
+Incluye tabla comparativa, FAQs y contacto.
+
+---
+
+## Contenidos iniciales del blog (3 artículos MDX)
+
+1. *Cómo estimar un MVP sin mentirle a tu CFO*
+2. *De cero a 95 en Lighthouse: guía práctica*
+3. *RAG en producción: lecciones que aprendimos a la mala*
+
+---
+
+## Footer (contenido legal y confianza)
+
+* Dirección, email de contacto, redes, aviso de soporte.
+* Enlaces a Privacidad, Términos, Cookies; banner de consentimiento.
+* Badges (https, CDN, uptime), políticas de seguridad y reporte de vulnerabilidades.
+
+---
+
+## Criterios de aceptación (debe cumplirse)
+
+1. Build y deploy funcionan en Replit sin cambios adicionales.
+2. Lighthouse ≥ 95 en todas las categorías en Home y Servicios.
+3. Páginas ES/EN operativas con selector de idioma y hreflang.
+4. Formularios validan, muestran estados y persisten datos.
+5. Sitemap, robots, OpenGraph y JSON‑LD correctos.
+6. Accesibilidad: navegación por teclado completa; contrastes verificados.
+7. README con pasos claros de ejecución y variables `.env`.
+
+---
+
+## Entregables
+
+* Código fuente completo.
+* 6+ páginas con contenido realista y 3 posts.
+* 12+ componentes reutilizables documentados.
+* Archivos de configuración (Tailwind, ESLint, Prettier).
+* Imágenes OG generadas por página (placeholder si no hay definitivas).
+
+---
+
+## Instrucciones finales
+
+1. Genera el proyecto con la estructura indicada.
+2. Llena el contenido con los textos de ejemplo (ES) y provee traducción EN.
+3. Deja TODO listo para *Deploy on Replit* y agrega en README el paso a paso.
+4. Entrega también un checklist de verificación (QA/SEO/Accesibilidad) en el README.

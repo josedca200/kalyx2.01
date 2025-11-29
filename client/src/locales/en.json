@@ -1,0 +1,187 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "about": "About",
+    "stack": "Stack & Practices",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "We build software that moves the needle",
+      "subtitle": "From idea to impact: strategy, design, development and scaling with clear metrics.",
+      "ctaPrimary": "Schedule a 30-min call",
+      "ctaSecondary": "Explore our cases"
+    },
+    "pillars": {
+      "title": "Why Kalyx",
+      "speed": "Responsible speed",
+      "quality": "Auditable quality",
+      "transparency": "Total transparency",
+      "security": "Security by design",
+      "roi": "Measurable ROI"
+    },
+    "services": {
+      "title": "Featured services",
+      "subtitle": "Complete solutions for every stage of your product"
+    },
+    "cases": {
+      "title": "Case studies",
+      "subtitle": "Measurable results in real projects"
+    },
+    "testimonials": {
+      "title": "What our clients say"
+    },
+    "cta": {
+      "title": "Ready to transform your idea into a product?",
+      "subtitle": "Schedule a 30-minute call with no commitment",
+      "button": "Talk to our team"
+    }
+  },
+  "services": {
+    "discovery": {
+      "title": "Discovery & Strategy",
+      "description": "We align business, users and technology in 10 days to distill an executable plan."
+    },
+    "design": {
+      "title": "UX/UI & Design Systems",
+      "description": "Beautiful, accessible and consistent designs that scale without friction."
+    },
+    "web": {
+      "title": "Web Development & APIs",
+      "description": "Fast, secure and observable apps; production-ready APIs."
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "description": "Native experiences with a single codebase and express launch."
+    },
+    "data": {
+      "title": "Data & AI",
+      "description": "From dashboards to assistants with LLMs and RAG; data-driven decisions, not hunches."
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "Continuous deployment, 360° monitoring, costs under control."
+    },
+    "qa": {
+      "title": "QA & Performance",
+      "description": "We prevent regressions, measure, optimize and document."
+    },
+    "support": {
+      "title": "Support & SLA",
+      "description": "Your extended team, with clear response and resolution times."
+    }
+  },
+  "pricing": {
+    "title": "Transparent pricing",
+    "subtitle": "Packages designed for every stage of your product",
+    "discovery": {
+      "name": "Discovery Sprint",
+      "price": "from €2,300",
+      "duration": "10 days",
+      "features": [
+        "User and market research",
+        "Value map and stakeholders",
+        "Prioritized backlog",
+        "Initial roadmap",
+        "Executive presentation"
+      ]
+    },
+    "mvp": {
+      "name": "MVP Sprint",
+      "price": "from €7,400",
+      "duration": "4-6 weeks",
+      "features": [
+        "UX/UI design and prototype",
+        "Full-stack development",
+        "Initial release with metrics",
+        "QA and testing",
+        "Technical documentation"
+      ]
+    },
+    "scale": {
+      "name": "Scaling",
+      "price": "from €3,700/mo",
+      "duration": "Ongoing",
+      "features": [
+        "Dedicated extended team",
+        "Quarterly roadmap",
+        "Defined SLOs",
+        "Continuous optimization",
+        "Priority support"
+      ]
+    },
+    "support": {
+      "name": "Support",
+      "price": "from €1,100/mo",
+      "duration": "Monthly",
+      "features": [
+        "Preventive maintenance",
+        "24/7 monitoring",
+        "Security patches",
+        "Dependency updates",
+        "Monthly reports"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Let's talk about your project",
+    "subtitle": "We'll respond in less than 24 hours",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company",
+      "companySize": "Company size",
+      "budget": "Estimated budget",
+      "message": "Tell us about your project",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll contact you soon.",
+      "error": "There was an error. Please try again."
+    },
+    "companySizes": {
+      "1-10": "1-10 employees",
+      "11-50": "11-50 employees",
+      "51-200": "51-200 employees",
+      "201+": "201+ employees"
+    },
+    "budgets": {
+      "<10k": "Less than €9,200",
+      "10k-25k": "€9,200 - €23,000",
+      "25k-50k": "€23,000 - €46,000",
+      "50k+": "More than €46,000"
+    }
+  },
+  "newsletter": {
+    "title": "Stay updated",
+    "subtitle": "Receive technical and strategic insights monthly",
+    "placeholder": "your@email.com",
+    "button": "Subscribe",
+    "success": "Thanks for subscribing!",
+    "error": "There was an error. Please try again."
+  },
+  "footer": {
+    "company": "Company",
+    "services": "Services",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "rights": "© 2024 Kalyx Service Technology. All rights reserved.",
+    "tagline": "We design, build and scale software products that generate real value."
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "viewAll": "View all",
+    "backToHome": "Back to home",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}
