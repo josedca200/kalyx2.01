@@ -1,6 +1,7 @@
+// Vercel serverless function handler
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "../server/routes";
+import { serveStatic, log } from "../server/vite";
 import helmet from "helmet";
 
 const app = express();
@@ -31,6 +32,7 @@ declare module 'http' {
     rawBody: unknown
   }
 }
+
 app.use(express.json({
   verify: (req, _res, buf) => {
     req.rawBody = buf;
@@ -68,47 +70,26 @@ app.use((req, res, next) => {
   next();
 });
 
+// Register API routes directly (Vercel doesn't need HTTP server)
 (async () => {
-  const server = await registerRoutes(app);
+  // Create a dummy server for registerRoutes (it expects a Server return)
+  const { createServer } = await import("http");
+  const dummyServer = createServer(app);
+  
+  // Register routes (this will add routes to app)
+  await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
 
     res.status(status).json({ message });
-    throw err;
   });
 
-  // Set NODE_ENV if not already set
-  if (!process.env.NODE_ENV) {
-    process.env.NODE_ENV = "development";
-  }
-
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  const isDevelopment = process.env.NODE_ENV === "development";
-  if (isDevelopment) {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
-
-  // Serve the app on the port specified in the environment variable PORT
-  // Default to 5000 if not specified.
-  // This serves both the API and the client.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  const serverOptions: any = {
-    port,
-    host: "0.0.0.0",
-  };
-  
-  // reusePort is not supported on all platforms (e.g., Windows)
-  if (process.platform !== 'win32') {
-    serverOptions.reusePort = true;
-  }
-  
-  server.listen(serverOptions, () => {
-    log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
-  });
+  // In Vercel, always serve static files (production mode)
+  serveStatic(app);
 })();
+
+// Export the Express app for Vercel
+export default app;
+
